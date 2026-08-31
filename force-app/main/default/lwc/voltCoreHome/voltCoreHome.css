@@ -1,0 +1,436 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero-section {
+    width: 100%;
+    min-height: 520px;
+
+    box-sizing: border-box;
+
+    padding: 45px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061522 0%,
+            #071c30 55%,
+            #082b4d 100%
+        );
+
+    color: #ffffff;
+
+    font-family: "Times New Roman", Times, serif;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+   ========================================= */
+
+.hero-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -180px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: #0066ff;
+
+    opacity: 0.08;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.hero-content {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 70px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   LEFT
+   ========================================= */
+
+.hero-text {
+    flex: 1;
+
+    min-width: 0;
+
+    max-width: 560px;
+}
+
+
+/* =========================================
+   EYEBROW
+   ========================================= */
+
+.eyebrow {
+    margin: 0 0 18px;
+
+    color: #008cff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================
+   HEADING
+   ========================================= */
+
+.hero-text h1 {
+    margin: 0 0 22px;
+
+    color: #ffffff;
+
+    font-size: 58px;
+
+    line-height: 1.02;
+
+    font-weight: 700;
+}
+
+.hero-text h1 span {
+    color: #0066ff;
+}
+
+
+/* =========================================
+   DESCRIPTION
+   ========================================= */
+
+.hero-description {
+    margin: 0;
+
+    max-width: 540px;
+
+    color: #cbd8e2;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FEATURES
+   ========================================= */
+
+.hero-features {
+    margin-top: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 38px;
+}
+
+
+/* =========================================
+   FEATURE
+   ========================================= */
+
+.feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 125px;
+}
+
+
+/* =========================================
+   ICON BASE
+   ========================================= */
+
+.feature-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   PERFORMANCE
+   ========================================= */
+
+.performance-icon {
+    width: 18px;
+    height: 18px;
+
+    margin: 0 6px;
+
+    border: 2px solid #008cff;
+
+    transform: rotate(45deg);
+}
+
+.performance-icon .icon-line {
+    width: 9px;
+    height: 2px;
+
+    background: #008cff;
+
+    transform: rotate(-45deg);
+}
+
+
+/* =========================================
+   RELIABILITY
+   ========================================= */
+
+.reliability-icon {
+    width: 28px;
+    height: 28px;
+
+    border: 2px solid #0066ff;
+
+    border-radius: 50%;
+}
+
+.check-icon {
+    width: 10px;
+    height: 6px;
+
+    border-left: 2px solid #008cff;
+    border-bottom: 2px solid #008cff;
+
+    transform: rotate(-45deg);
+
+    margin-top: -3px;
+}
+
+
+/* =========================================
+   INDIA
+   ========================================= */
+
+.india-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.diamond-icon {
+    width: 15px;
+    height: 15px;
+
+    background: #0066ff;
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================
+   FEATURE TEXT
+   ========================================= */
+
+.feature-text {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.feature-text strong {
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.feature-text span {
+    color: #b7c7d5;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   IMAGE
+   ========================================= */
+
+.hero-visual {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.hero-image {
+    display: block;
+
+    width: 100%;
+
+    max-width: 620px;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media screen and (max-width: 1000px) {
+
+    .hero-section {
+        padding: 40px 5%;
+    }
+
+    .hero-content {
+        gap: 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 46px;
+    }
+
+    .hero-features {
+        gap: 20px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media screen and (max-width: 700px) {
+
+    .hero-section {
+        min-height: auto;
+
+        padding: 45px 25px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 40px;
+    }
+
+    .hero-text {
+        max-width: none;
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-features {
+        margin-top: 35px;
+
+        flex-wrap: wrap;
+
+        gap: 22px;
+    }
+
+    .hero-visual {
+        width: 100%;
+    }
+
+    .hero-image {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media screen and (max-width: 450px) {
+
+    .hero-section {
+        padding: 35px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 34px;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero-features {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+}

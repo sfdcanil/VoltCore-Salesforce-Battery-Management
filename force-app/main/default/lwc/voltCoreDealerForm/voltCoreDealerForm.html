@@ -1,0 +1,252 @@
+<template>
+
+    <section class="dealer-form">
+
+        <div class="form-container">
+
+            <div class="form-header">
+                <h1>Become a VoltCore Dealer</h1>
+
+                <p>
+                    Interested in becoming a VoltCore Batteries dealer?
+                    Submit your business details and our team will get in touch
+                    with you shortly.
+                </p>
+            </div>
+
+            <lightning-record-edit-form
+                object-api-name="Lead"
+                onsuccess={handleSuccess}
+                onerror={handleError}>
+
+                <div class="form-grid">
+
+                    <!-- FIRST NAME -->
+                    <div class="field-wrapper">
+                        <label class="field-label">
+                            First Name
+                        </label>
+
+                        <lightning-input-field
+                            field-name="FirstName"
+                            variant="label-hidden">
+                        </lightning-input-field>
+                    </div>
+
+
+                    <!-- LAST NAME -->
+                    <div class="field-wrapper">
+                        <label class="field-label">
+                            <span class="required">*</span>
+                            Last Name
+                        </label>
+
+                        <lightning-input-field
+                            field-name="LastName"
+                            variant="label-hidden"
+                            required>
+                        </lightning-input-field>
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="field-wrapper">
+                        <label class="field-label">
+                            <span class="required">*</span>
+                            Email
+                        </label>
+
+                        <lightning-input-field
+                            field-name="Email"
+                            variant="label-hidden"
+                            required>
+                        </lightning-input-field>
+                    </div>
+
+
+                    <!-- PHONE -->
+                    <div class="field-wrapper">
+                        <label class="field-label">
+                            <span class="required">*</span>
+                            Phone
+                        </label>
+
+                        <lightning-input-field
+                            field-name="Phone"
+                            variant="label-hidden"
+                            required>
+                        </lightning-input-field>
+                    </div>
+
+
+                    <!-- COMPANY -->
+                    <div class="field-wrapper">
+                        <label class="field-label">
+                            <span class="required">*</span>
+                            Company Name
+                        </label>
+
+                        <lightning-input-field
+                            field-name="Company"
+                            variant="label-hidden"
+                            required>
+                        </lightning-input-field>
+                    </div>
+
+
+                    <!-- GSTIN -->
+                    <div class="field-wrapper">
+                        <label class="field-label">
+                            <span class="required">*</span>
+                            GSTIN
+                        </label>
+
+                        <lightning-input-field
+                            field-name="GSTIN__c"
+                            variant="label-hidden"
+                            required>
+                        </lightning-input-field>
+                    </div>
+
+
+                    <!-- PAN -->
+                    <div class="field-wrapper">
+                        <label class="field-label">
+                            <span class="required">*</span>
+                            PAN Number
+                        </label>
+
+                        <lightning-input-field
+                            field-name="PAN_Number__c"
+                            variant="label-hidden"
+                            required>
+                        </lightning-input-field>
+                    </div>
+
+
+                    <!-- STREET -->
+                    <div class="field-wrapper full-width">
+                        <label class="field-label">
+                            <span class="required">*</span>
+                            Street
+                        </label>
+
+                        <lightning-input-field
+                            field-name="Street"
+                            variant="label-hidden"
+                             required>
+                            
+                        </lightning-input-field>
+                    </div>
+
+
+                    <!-- CITY -->
+                    <div class="field-wrapper">
+                        <label class="field-label">
+                            <span class="required">*</span>
+                            City
+                        </label>
+
+                        <lightning-input-field
+                            field-name="City"
+                            variant="label-hidden"
+                            required>
+                        </lightning-input-field>
+                    </div>
+
+
+                    <!-- STATE -->
+                    <div class="field-wrapper">
+                        <label class="field-label">
+                            <span class="required">*</span>
+                            State / Province
+                        </label>
+
+                        <lightning-input-field
+                            field-name="State"
+                            variant="label-hidden"
+                            required>
+                        </lightning-input-field>
+                    </div>
+
+
+                    <!-- COUNTRY -->
+                    <div class="field-wrapper">
+                        <label class="field-label">
+                            <span class="required">*</span>
+                            Country
+                        </label>
+
+                        <lightning-input-field
+                            field-name="Country"
+                            variant="label-hidden"
+                            required>
+                        </lightning-input-field>
+                    </div>
+
+
+                    <!-- PINCODE -->
+                    <div class="field-wrapper">
+                        <label class="field-label">
+                            <span class="required">*</span>
+                            Pincode
+                        </label>
+
+                        <lightning-input-field
+                            field-name="PostalCode"
+                            variant="label-hidden"
+                            required>
+                        </lightning-input-field>
+                    </div>
+
+
+                    <!-- LEAD SOURCE -->
+                    <lightning-input-field
+                        field-name="LeadSource"
+                        value="Web"
+                        class="hidden-field">
+                    </lightning-input-field>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <div class="submit-container">
+
+                    <button
+                        type="submit"
+                        class="submit-button">
+
+                        Submit Dealer Enquiry
+
+                    </button>
+
+                </div>
+
+
+                <!-- SUCCESS -->
+                <template if:true={successMessage}>
+
+                    <div class="success-message">
+                        {successMessage}
+                    </div>
+
+                </template>
+
+
+                <!-- ERROR -->
+                <template if:true={errorMessage}>
+
+                    <div class="error-message">
+                        {errorMessage}
+                    </div>
+
+                </template>
+
+            </lightning-record-edit-form>
+
+        </div>
+
+    </section>
+
+</template>

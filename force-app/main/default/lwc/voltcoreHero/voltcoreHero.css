@@ -1,0 +1,655 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero-section {
+    width: 100%;
+    min-height: 500px;
+
+    box-sizing: border-box;
+
+    padding: 55px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061522 0%,
+            #071c30 55%,
+            #082b4d 100%
+        );
+
+    color: #ffffff;
+
+    font-family: "Times New Roman", Times, serif;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+   ========================================= */
+
+.hero-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -170px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: #0066ff;
+
+    opacity: 0.08;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+.hero-content {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 70px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+   ========================================= */
+
+.hero-text {
+    flex: 1;
+
+    min-width: 0;
+
+    max-width: 560px;
+}
+
+
+/* =========================================
+   EYEBROW
+   ========================================= */
+
+.eyebrow {
+    margin: 0 0 18px;
+
+    color: #008cff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================
+   HEADING
+   ========================================= */
+
+.hero-text h1 {
+    margin: 0 0 22px;
+
+    color: #ffffff;
+
+    font-size: 58px;
+
+    line-height: 1.02;
+
+    font-weight: 700;
+}
+
+
+.hero-text h1 span {
+    color: #0066ff;
+}
+
+
+/* =========================================
+   DESCRIPTION
+   ========================================= */
+
+.hero-description {
+    margin: 0;
+
+    max-width: 520px;
+
+    color: #cbd8e2;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   DEALER BUTTON
+   ========================================= */
+
+.hero-actions {
+    margin-top: 30px;
+}
+
+
+.dealer-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 13px 24px;
+
+    background: #0066ff;
+
+    border: 1px solid #0066ff;
+
+    border-radius: 3px;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.dealer-button:hover {
+    background: #008cff;
+
+    border-color: #008cff;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transform: translateY(-1px);
+}
+
+
+.arrow {
+    font-size: 16px;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   HERO VISUAL
+   ========================================= */
+
+.hero-visual {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================
+   CAROUSEL CONTAINER
+   ========================================= */
+
+.carousel-container {
+    width: 100%;
+
+    max-width: 620px;
+
+    aspect-ratio: 16 / 9;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #061522;
+}
+
+
+/* =========================================
+   SLIDES
+   ========================================= */
+
+.carousel-slide {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    transform: scale(1.03);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+.carousel-slide.active {
+    opacity: 1;
+
+    transform: scale(1);
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   CAROUSEL IMAGE
+   ========================================= */
+
+.hero-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* =========================================
+   CAROUSEL ARROWS
+   ========================================= */
+
+.carousel-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+
+    border-radius: 50%;
+
+    background: rgba(6, 21, 34, 0.75);
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.carousel-container:hover .carousel-arrow {
+    opacity: 1;
+}
+
+
+.carousel-arrow span {
+    display: block;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    margin-top: -3px;
+}
+
+
+.carousel-arrow:hover {
+    background: #0066ff;
+
+    border-color: #0066ff;
+}
+
+
+.carousel-arrow:focus {
+    outline: 2px solid #008cff;
+
+    outline-offset: 2px;
+}
+
+
+.carousel-arrow.previous {
+    left: 18px;
+}
+
+
+.carousel-arrow.next {
+    right: 18px;
+}
+
+
+/* =========================================
+   CAROUSEL DOTS
+   ========================================= */
+
+.carousel-dots {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 18px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 7px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(6, 21, 34, 0.55);
+
+    z-index: 20;
+}
+
+
+/* =========================================
+   DOT BUTTON
+   ========================================= */
+
+.carousel-dot {
+    width: 9px;
+    height: 9px;
+
+    min-width: 9px;
+
+    padding: 0;
+
+    margin: 0;
+
+    display: block;
+
+    border: 1px solid #ffffff;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    opacity: 0.9;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        width 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.carousel-dot span {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+}
+
+
+.carousel-dot:hover {
+    opacity: 1;
+
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+.carousel-dot.active {
+    width: 26px;
+
+    min-width: 26px;
+
+    border-radius: 10px;
+
+    background: #0066ff;
+
+    border-color: #0066ff;
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media screen and (max-width: 1000px) {
+
+    .hero-section {
+        padding: 45px 5%;
+    }
+
+
+    .hero-content {
+        gap: 40px;
+    }
+
+
+    .hero-text h1 {
+        font-size: 46px;
+    }
+
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+
+    .carousel-container {
+        max-width: 520px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media screen and (max-width: 700px) {
+
+    .hero-section {
+        min-height: auto;
+
+        padding: 45px 25px;
+    }
+
+
+    .hero-content {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 40px;
+    }
+
+
+    .hero-text {
+        max-width: none;
+    }
+
+
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+
+    .hero-visual {
+        width: 100%;
+    }
+
+
+    .carousel-container {
+        width: 100%;
+
+        max-width: 100%;
+
+        aspect-ratio: 16 / 9;
+    }
+
+
+    .carousel-arrow {
+        width: 34px;
+        height: 34px;
+
+        opacity: 1;
+    }
+
+
+    .carousel-arrow span {
+        font-size: 24px;
+    }
+
+
+    .carousel-arrow.previous {
+        left: 12px;
+    }
+
+
+    .carousel-arrow.next {
+        right: 12px;
+    }
+
+
+    .carousel-dots {
+        bottom: 12px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media screen and (max-width: 450px) {
+
+    .hero-section {
+        padding: 35px 20px;
+    }
+
+
+    .hero-text h1 {
+        font-size: 34px;
+    }
+
+
+    .eyebrow {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .dealer-button {
+        padding: 12px 20px;
+
+        font-size: 13px;
+    }
+
+
+    .carousel-arrow {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .carousel-arrow span {
+        font-size: 21px;
+    }
+
+}

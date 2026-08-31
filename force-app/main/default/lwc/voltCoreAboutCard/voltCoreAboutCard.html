@@ -1,0 +1,30 @@
+<template>
+    <article class="card">
+
+        <div class="icon">
+            ⚡
+        </div>
+
+        <h2>{title}</h2>
+
+        <div class="gold-line"></div>
+
+        <p class="description">
+            {description}
+        </p>
+
+        <ul>
+            <template for:each={highlights} for:item="item">
+                <li key={item}>
+                    <span>✓</span>
+                    {item}
+                </li>
+            </template>
+        </ul>
+
+        <button class="read-more">
+            Learn More
+        </button>
+
+    </article>
+</template>

@@ -1,0 +1,325 @@
+:host {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+
+/* =========================================
+   MAIN SECTION
+   ========================================= */
+
+.benefits-section {
+    width: 100%;
+
+    height: auto;
+    min-height: 0;
+
+    box-sizing: border-box;
+
+    padding: 45px 48px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #061522 0%,
+            #08223a 60%,
+            #061522 100%
+        );
+
+    color: #ffffff;
+
+    font-family: "Times New Roman", Times, serif;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 0;
+}
+
+
+/* =========================================
+   BLUE GLOW
+   ========================================= */
+
+.benefits-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: -130px;
+    bottom: -130px;
+
+    border-radius: 50%;
+
+    background: #0066ff;
+
+    opacity: 0.10;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.content {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    max-width: 560px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   EYEBROW
+   ========================================= */
+
+.eyebrow {
+    margin: 0 0 15px;
+
+    color: #008cff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   HEADING
+   ========================================= */
+
+.content h1 {
+    margin: 0 0 18px;
+
+    color: #ffffff;
+
+    font-size: 46px;
+
+    line-height: 1.05;
+
+    font-weight: bold;
+}
+
+.content h1 span {
+    color: #0066ff;
+}
+
+
+/* =========================================
+   INTRO
+   ========================================= */
+
+.intro {
+    margin: 0 0 28px;
+
+    max-width: 520px;
+
+    color: #cbd8e2;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BENEFITS LIST
+   ========================================= */
+
+.benefits-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+/* =========================================
+   BENEFIT ITEM
+   ========================================= */
+
+.benefit-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 17px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================
+   NUMBER
+   ========================================= */
+
+.number {
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #0066ff;
+
+    border-radius: 50%;
+
+    color: #008cff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   BENEFIT CONTENT
+   ========================================= */
+
+.benefit-content {
+    flex: 1;
+}
+
+.benefit-content h3 {
+    margin: 0 0 4px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+.benefit-content p {
+    margin: 0;
+
+    color: #aebdca;
+
+    font-size: 15px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   PARTNER NOTE
+   ========================================= */
+
+.partner-note {
+    margin-top: 25px;
+
+    padding-top: 0;
+}
+
+.accent-line {
+    width: 45px;
+
+    height: 3px;
+
+    margin-bottom: 12px;
+
+    background: #0066ff;
+}
+
+.partner-note h2 {
+    margin: 0 0 7px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+}
+
+.partner-note p {
+    margin: 0;
+
+    color: #aebdca;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media screen and (max-width: 900px) {
+
+    .benefits-section {
+        padding: 40px 35px;
+    }
+
+    .content h1 {
+        font-size: 40px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media screen and (max-width: 650px) {
+
+    :host {
+        height: auto;
+        display: block;
+    }
+
+    .benefits-section {
+        width: 100%;
+
+        height: auto;
+        min-height: auto;
+
+        padding: 40px 25px;
+    }
+
+    .content h1 {
+        font-size: 36px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    .benefit-item {
+        gap: 13px;
+    }
+
+    .number {
+        width: 34px;
+        height: 34px;
+    }
+
+    .benefit-content h3 {
+        font-size: 18px;
+    }
+
+    .benefit-content p {
+        font-size: 14px;
+    }
+}

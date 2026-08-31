@@ -1,0 +1,30 @@
+<template>
+    <article class="card">
+
+        <div class="icon">
+            🛠️
+        </div>
+
+        <h2>{title}</h2>
+
+        <div class="gold-line"></div>
+
+        <p class="description">
+            {description}
+        </p>
+
+        <ul>
+            <template for:each={services} for:item="service">
+                <li key={service}>
+                    <span>✓</span>
+                    {service}
+                </li>
+            </template>
+        </ul>
+
+        <button class="read-more">
+            Discover Services
+        </button>
+
+    </article>
+</template>

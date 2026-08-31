@@ -1,0 +1,30 @@
+<template>
+    <article class="card">
+
+        <div class="icon">
+            🔋
+        </div>
+
+        <h2>{title}</h2>
+
+        <div class="gold-line"></div>
+
+        <p class="description">
+            {description}
+        </p>
+
+        <ul>
+            <template for:each={products} for:item="product">
+                <li key={product}>
+                    <span>⚡</span>
+                    {product}
+                </li>
+            </template>
+        </ul>
+
+        <button class="read-more">
+            Explore Products
+        </button>
+
+    </article>
+</template>
