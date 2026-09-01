@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PAN_Number_Validation_rule</fullName>
+    <active>true</active>
+    <description>It is used to check whether the user enters the PAN number in correct format.</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK( PAN_Number__c )),
+    NOT(
+        REGEX(
+            PAN_Number__c ,
+            &quot;^[A-Z]{5}[0-9]{4}[A-Z]{1}$&quot;
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>PAN_Number__c</errorDisplayField>
+    <errorMessage>Kindly check the PAN number.</errorMessage>
+</ValidationRule>
