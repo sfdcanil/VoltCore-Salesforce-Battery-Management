@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Final_Approval_Email_Alert</fullName>
+        <description>This mail is used to send lead approved notification to the sales user .</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Battery_Management/Lead_Final_Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection_Mail_Alert</fullName>
+        <description>This mail is used to send lead rejected notification to the sales user .</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Battery_Management/Lead_Final_Rejection_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Regional_Manager_approval_Mail</fullName>
+        <description>This mail is used to send lead approval notification to the Regional Manager.</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Regional_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Battery_Management/Lead_Approval_Request_Regional_Manager</template>
+    </alerts>
+    <alerts>
+        <fullName>This_mail_is_used_to_notify_the_potential_lead_that_their_dealer_request_is_reje</fullName>
+        <description>This mail is used to notify the potential lead that their dealer request is rejected.</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>nandysfusers@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Battery_Management/Dealer_Application_Rejected_Confirmation</template>
+    </alerts>
+    <alerts>
+        <fullName>This_mail_is_used_to_send_congratulation_message_to_the_dealer_on_becoming_a_dea</fullName>
+        <description>This mail is used to send congratulation message to the dealer on becoming a dealer.</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>nandysfusers@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Battery_Management/Dealer_Application_Approved_Confirmation</template>
+    </alerts>
+    <alerts>
+        <fullName>This_mail_is_used_to_send_lead_approval_notification_to_the_National_Manager</fullName>
+        <description>This mail is used to send lead approval notification to the National Manager.</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>National_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Battery_Management/Lead_Approval_Request_Regional_Manager</template>
+    </alerts>
+    <alerts>
+        <fullName>This_mail_is_used_to_send_lead_approved_notification_to_the_sales_user</fullName>
+        <description>This mail is used to send lead approved notification to the sales user.</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_User</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>BatteryManagement/Dealer_Application_Submitted_for_Approved_1787999677157</template>
+    </alerts>
+    <alerts>
+        <fullName>This_mail_is_used_to_send_lead_approved_notification_to_the_sales_user_from_Nati</fullName>
+        <description>This mail is used to send lead approved  notification to the sales user from National Head.</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_User</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>BatteryManagement/Dealer_Application_Submitted_for_Approved_1787999677157</template>
+    </alerts>
+    <alerts>
+        <fullName>This_mail_is_used_to_send_lead_rejected_notification_to_the_Sales_user</fullName>
+        <description>This mail is used to send lead rejected notification to the Sales user.</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_User</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>BatteryManagement/Dealer_Application_Rejected_1788000619773</template>
+    </alerts>
+    <alerts>
+        <fullName>This_mail_is_used_to_send_lead_rejected_notification_to_the_sales_user_from_Nati</fullName>
+        <description>This mail is used to send lead rejected notification to the sales user from National Head.</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_User</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>BatteryManagement/Dealer_Application_Rejected_1788000619773</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approved_Field_Update</fullName>
+        <description>It is used to update Approval ststus field to Approved once National Head Approves .</description>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approved Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_Field_Update</fullName>
+        <description>It is used to updatte the Approval status field to Rejected once the Regional head or National Head rejects the Record.</description>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Rejected Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted_Field_update</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Awaiting Approval</literalValue>
+        <name>Submitted Field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

@@ -3,15 +3,12 @@
     <fullName>Last_Name_Validation</fullName>
     <active>true</active>
     <description>This rule is used to check whether the user enters a Valid Name.</description>
-    <errorConditionFormula>AND(
-    NOT(ISBLANK( LastName )),
-    NOT(
+    <errorConditionFormula>NOT(
         REGEX(
              LastName ,
             &quot;^[A-Za-z][A-Za-z .&apos;-]*$&quot;
         )
-    )
-)</errorConditionFormula>
+    )</errorConditionFormula>
     <errorDisplayField>LastName</errorDisplayField>
     <errorMessage>Name can contain only letters, spaces, apostrophes and hyphens.</errorMessage>
 </ValidationRule>

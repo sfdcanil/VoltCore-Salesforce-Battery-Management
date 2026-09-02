@@ -125,7 +125,7 @@
 
 
                     <!-- STREET -->
-                    <div class="field-wrapper full-width">
+                    <div class="field-wrapper">
                         <label class="field-label">
                             <span class="required">*</span>
                             Street
@@ -149,6 +149,20 @@
 
                         <lightning-input-field
                             field-name="City"
+                            variant="label-hidden"
+                            required>
+                        </lightning-input-field>
+                    </div>
+
+                     <!-- PINCODE -->
+                    <div class="field-wrapper">
+                        <label class="field-label">
+                            <span class="required">*</span>
+                            Pincode
+                        </label>
+
+                        <lightning-input-field
+                            field-name="PostalCode"
                             variant="label-hidden"
                             required>
                         </lightning-input-field>
@@ -185,19 +199,7 @@
                     </div>
 
 
-                    <!-- PINCODE -->
-                    <div class="field-wrapper">
-                        <label class="field-label">
-                            <span class="required">*</span>
-                            Pincode
-                        </label>
-
-                        <lightning-input-field
-                            field-name="PostalCode"
-                            variant="label-hidden"
-                            required>
-                        </lightning-input-field>
-                    </div>
+                   
 
 
                     <!-- LEAD SOURCE -->
