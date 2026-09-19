@@ -1,0 +1,880 @@
+<template>
+
+    <section class="dealer-dashboard">
+
+        <!-- ============================= -->
+        <!-- LOADING -->
+        <!-- ============================= -->
+
+        <template if:true={isLoading}>
+
+            <div class="loading-container">
+
+                <lightning-spinner
+                    alternative-text="Loading dealer dashboard"
+                    size="medium">
+                </lightning-spinner>
+
+            </div>
+
+        </template>
+
+
+        <!-- ============================= -->
+        <!-- ERROR -->
+        <!-- ============================= -->
+
+        <template if:true={errorMessage}>
+
+            <div class="error-message">
+                {errorMessage}
+            </div>
+
+        </template>
+
+
+        <!-- ============================= -->
+        <!-- DASHBOARD -->
+        <!-- ============================= -->
+
+        <template if:true={hasDealerData}>
+
+            <!-- ================================= -->
+            <!-- HERO / WELCOME -->
+            <!-- ================================= -->
+
+            <section class="hero-section">
+
+                <div class="hero-background-circle circle-one"></div>
+                <div class="hero-background-circle circle-two"></div>
+
+                <div class="hero-content">
+
+                    <div class="hero-left">
+
+                        <div class="hero-eyebrow">
+                            VOLTCORE DEALER PORTAL
+                        </div>
+
+                        <h1>
+                            Welcome back, {fullName}
+                        </h1>
+
+                        <p class="hero-description">
+                            Manage your dealership, products, orders and
+                            support activities from one place.
+                        </p>
+
+
+                        <div class="hero-details">
+
+                            <div class="hero-detail">
+
+                                <div class="hero-detail-icon">
+
+                                    <lightning-icon
+                                        icon-name="utility:company"
+                                        size="small"
+                                        alternative-text="Dealer Account">
+                                    </lightning-icon>
+
+                                </div>
+
+                                <div>
+
+                                    <span class="hero-detail-label">
+                                        Dealer Account
+                                    </span>
+
+                                    <strong>
+                                        {dealer.accountName}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="hero-divider"></div>
+
+
+                            <div class="hero-detail">
+
+                                <div class="hero-detail-icon">
+
+                                    <lightning-icon
+                                        icon-name="utility:location"
+                                        size="small"
+                                        alternative-text="Location">
+                                    </lightning-icon>
+
+                                </div>
+
+                                <div>
+
+                                    <span class="hero-detail-label">
+                                        Location
+                                    </span>
+
+                                    <strong>
+                                        {dealer.billingCity},
+                                        {dealer.billingState}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STATUS -->
+
+                    <div class="hero-right">
+
+                        <div class="dealer-status">
+
+                            <span class="status-dot"></span>
+
+                            <span>
+                                Active Dealer
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Authorized Portal Access
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================= -->
+            <!-- MAIN MODULES -->
+            <!-- ================================= -->
+
+            <section class="module-grid">
+
+
+                <!-- ORDERS -->
+
+                <article class="module-card orders-card">
+
+                    <div class="module-header">
+
+                        <div class="module-icon">
+
+                            <lightning-icon
+                                icon-name="utility:orders"
+                                size="small"
+                                alternative-text="Orders">
+                            </lightning-icon>
+
+                        </div>
+
+                        <span class="module-label">
+                            ORDERS
+                        </span>
+
+                    </div>
+
+
+                    <div class="module-body">
+
+                        <h2>
+                            Orders
+                        </h2>
+
+                        <p>
+                            View and manage your dealership orders.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="module-button">
+
+                        View Orders
+
+                        <span>
+                            GÂ∆
+                        </span>
+
+                    </button>
+
+
+                    <div class="module-decoration orders-decoration">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCTS -->
+
+                <article class="module-card products-card">
+
+                    <div class="module-header">
+
+                        <div class="module-icon">
+
+                            <lightning-icon
+                                icon-name="utility:product"
+                                size="small"
+                                alternative-text="Products">
+                            </lightning-icon>
+
+                        </div>
+
+                        <span class="module-label">
+                            CATALOG
+                        </span>
+
+                    </div>
+
+
+                    <div class="module-body">
+
+                        <h2>
+                            Products
+                        </h2>
+
+                        <p>
+                            Explore batteries and products available
+                            to your dealership.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="module-button">
+
+                        View Products
+
+                        <span>
+                            GÂ∆
+                        </span>
+
+                    </button>
+
+
+                    <div class="battery-decoration">
+
+                        <div class="battery-body">
+
+                            <div class="battery-level"></div>
+
+                        </div>
+
+                        <div class="battery-terminal"></div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CASES -->
+
+                <article class="module-card cases-card">
+
+                    <div class="module-header">
+
+                        <div class="module-icon">
+
+                            <lightning-icon
+                                icon-name="utility:case"
+                                size="small"
+                                alternative-text="Cases">
+                            </lightning-icon>
+
+                        </div>
+
+                        <span class="module-label">
+                            SUPPORT
+                        </span>
+
+                    </div>
+
+
+                    <div class="module-body">
+
+                        <h2>
+                            Cases & Requests
+                        </h2>
+
+                        <p>
+                            Track support cases and dealer service
+                            requests.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="module-button">
+
+                        View Cases
+
+                        <span>
+                            GÂ∆
+                        </span>
+
+                    </button>
+
+
+                    <div class="support-decoration">
+
+                        <div class="headphone-band"></div>
+
+                        <div class="headphone-left"></div>
+                        <div class="headphone-right"></div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- ================================= -->
+            <!-- LOWER SECTION -->
+            <!-- ================================= -->
+
+            <section class="lower-grid">
+
+
+                <!-- ================================= -->
+                <!-- DEALER PROFILE -->
+                <!-- ================================= -->
+
+                <article class="dashboard-card profile-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon blue-icon">
+
+                            <lightning-icon
+                                icon-name="utility:company"
+                                size="small"
+                                alternative-text="Dealer Profile">
+                            </lightning-icon>
+
+                        </div>
+
+                        <div>
+
+                            <span class="section-label">
+                                DEALER PROFILE
+                            </span>
+
+                            <h2>
+                                {dealer.accountName}
+                            </h2>
+
+                            <p>
+                                Your registered dealership information
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-content">
+
+
+                        <!-- LEFT -->
+
+                        <div class="profile-column">
+
+
+                            <div class="profile-row">
+
+                                <div class="row-icon">
+
+                                    <lightning-icon
+                                        icon-name="utility:company"
+                                        size="x-small"
+                                        alternative-text="Account">
+                                    </lightning-icon>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Dealer Account
+                                    </span>
+
+                                    <strong>
+                                        {dealer.accountName}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-row">
+
+                                <div class="row-icon">
+
+                                    <lightning-icon
+                                        icon-name="utility:user"
+                                        size="x-small"
+                                        alternative-text="Contact">
+                                    </lightning-icon>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Contact
+                                    </span>
+
+                                    <strong>
+                                        {fullName}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-row">
+
+                                <div class="row-icon">
+
+                                    <lightning-icon
+                                        icon-name="utility:email"
+                                        size="x-small"
+                                        alternative-text="Email">
+                                    </lightning-icon>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Email
+                                    </span>
+
+                                    <strong>
+                                        {dealer.email}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-row">
+
+                                <div class="row-icon">
+
+                                    <lightning-icon
+                                        icon-name="utility:call"
+                                        size="x-small"
+                                        alternative-text="Phone">
+                                    </lightning-icon>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Phone
+                                    </span>
+
+                                    <strong>
+                                        {dealer.phone}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RIGHT -->
+
+                        <div class="profile-column profile-right">
+
+
+                            <div class="location-block">
+
+                                <div class="location-icon">
+
+                                    <lightning-icon
+                                        icon-name="utility:location"
+                                        size="small"
+                                        alternative-text="Location">
+                                    </lightning-icon>
+
+                                </div>
+
+                                <div>
+
+                                    <span class="location-label">
+                                        Location
+                                    </span>
+
+                                    <strong>
+                                        {fullAddress}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ACCOUNT ACTIVE -->
+
+                            <div class="account-active">
+
+                                <div class="active-icon">
+
+                                    <lightning-icon
+                                        icon-name="utility:success"
+                                        size="small"
+                                        alternative-text="Active">
+                                    </lightning-icon>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Your account is active
+                                    </strong>
+
+                                    <span>
+                                        You have access to dealer
+                                        portal features.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-footer">
+
+                        <span>
+                            Dealer information
+                        </span>
+
+                        <button
+                            type="button"
+                            class="text-button">
+
+                            View Details GÂ∆
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ================================= -->
+                <!-- QUICK ACTIONS -->
+                <!-- ================================= -->
+
+                <article class="dashboard-card actions-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon purple-icon">
+
+                            <lightning-icon
+                                icon-name="utility:flash"
+                                size="small"
+                                alternative-text="Quick Actions">
+                            </lightning-icon>
+
+                        </div>
+
+                        <div>
+
+                            <span class="section-label">
+                                QUICK ACTIONS
+                            </span>
+
+                            <h2>
+                                What would you like to do?
+                            </h2>
+
+                            <p>
+                                Common tasks to manage your dealership
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="actions-grid">
+
+
+                        <!-- NEW ORDER -->
+
+                        <button
+                            type="button"
+                            class="action-box action-blue">
+
+                            <div class="action-box-icon">
+
+                                <lightning-icon
+                                    icon-name="utility:cart"
+                                    size="small"
+                                    alternative-text="New Order">
+                                </lightning-icon>
+
+                            </div>
+
+                            <div class="action-content">
+
+                                <strong>
+                                    Place New Order
+                                </strong>
+
+                                <span>
+                                    Create a new dealer order
+                                </span>
+
+                            </div>
+
+                            <span class="action-arrow">
+                                GÂ∆
+                            </span>
+
+                        </button>
+
+
+                        <!-- PRODUCTS -->
+
+                        <button
+                            type="button"
+                            class="action-box action-green">
+
+                            <div class="action-box-icon">
+
+                                <lightning-icon
+                                    icon-name="utility:product"
+                                    size="small"
+                                    alternative-text="Products">
+                                </lightning-icon>
+
+                            </div>
+
+                            <div class="action-content">
+
+                                <strong>
+                                    Browse Products
+                                </strong>
+
+                                <span>
+                                    Explore the product catalog
+                                </span>
+
+                            </div>
+
+                            <span class="action-arrow">
+                                GÂ∆
+                            </span>
+
+                        </button>
+
+
+                        <!-- SUPPORT -->
+
+                        <button
+                            type="button"
+                            class="action-box action-orange">
+
+                            <div class="action-box-icon">
+
+                                <lightning-icon
+                                    icon-name="utility:case"
+                                    size="small"
+                                    alternative-text="Support">
+                                </lightning-icon>
+
+                            </div>
+
+                            <div class="action-content">
+
+                                <strong>
+                                    Raise Support Request
+                                </strong>
+
+                                <span>
+                                    Get help from VoltCore
+                                </span>
+
+                            </div>
+
+                            <span class="action-arrow">
+                                GÂ∆
+                            </span>
+
+                        </button>
+
+
+                        <!-- PROFILE -->
+
+                        <button
+                            type="button"
+                            class="action-box action-purple">
+
+                            <div class="action-box-icon">
+
+                                <lightning-icon
+                                    icon-name="utility:edit"
+                                    size="small"
+                                    alternative-text="Profile">
+                                </lightning-icon>
+
+                            </div>
+
+                            <div class="action-content">
+
+                                <strong>
+                                    Update Profile
+                                </strong>
+
+                                <span>
+                                    Manage your dealer details
+                                </span>
+
+                            </div>
+
+                            <span class="action-arrow">
+                                GÂ∆
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- HELP -->
+
+                    <div class="help-box">
+
+                        <div class="help-icon">
+
+                            <lightning-icon
+                                icon-name="utility:help"
+                                size="small"
+                                alternative-text="Help">
+                            </lightning-icon>
+
+                        </div>
+
+                        <div class="help-content">
+
+                            <strong>
+                                Need help?
+                            </strong>
+
+                            <span>
+                                Contact our support team for assistance.
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="help-button">
+
+                            Contact Support GÂ∆
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- ================================= -->
+            <!-- FOOTER -->
+            <!-- ================================= -->
+
+            <footer class="portal-footer">
+
+                <div class="footer-brand">
+
+                    <div class="footer-logo">
+                        V
+                    </div>
+
+                    <strong>
+                        VOLTCORE BATTERIES
+                    </strong>
+
+                    <span class="footer-separator">
+                        |
+                    </span>
+
+                    <span>
+                        Powering a brighter tomorrow.
+                    </span>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <span>
+                        Privacy Policy
+                    </span>
+
+                    <span>
+                        |
+                    </span>
+
+                    <span>
+                        Terms of Use
+                    </span>
+
+                    <span>
+                        |
+                    </span>
+
+                    <span>
+                        Contact Us
+                    </span>
+
+                </div>
+
+            </footer>
+
+        </template>
+
+    </section>
+
+</template>

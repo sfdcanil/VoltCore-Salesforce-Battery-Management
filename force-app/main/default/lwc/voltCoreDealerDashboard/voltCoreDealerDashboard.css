@@ -1,0 +1,1910 @@
+/* =========================================================
+   VOLTCORE DEALER PORTAL
+   PHASE 1 - FULL SCREEN PREMIUM UI
+   ========================================================= */
+
+
+/* =========================================================
+   FULL WIDTH
+   ========================================================= */
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+
+.dealer-dashboard {
+
+    width: 100vw;
+
+    /*
+     * Break out of Experience Builder's centered
+     * content container.
+     */
+    margin-left: calc(50% - 50vw);
+
+    box-sizing: border-box;
+
+    padding: 34px 32px 45px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #102f4d;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f7fbff 0%,
+            #ffffff 55%,
+            #f7fbff 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading-container {
+
+    position: relative;
+
+    min-height: 500px;
+
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error-message {
+
+    max-width: 1200px;
+
+    margin: 20px auto;
+
+    padding: 16px 20px;
+
+    border-left: 4px solid #d92d20;
+
+    border-radius: 8px;
+
+    background: #fff4f3;
+
+    color: #b42318;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero-section {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 235px;
+
+    margin-bottom: 24px;
+
+    padding: 36px 54px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    border: 1px solid #b9d8f7;
+
+    background:
+        linear-gradient(
+            110deg,
+            #eef8ff 0%,
+            #dcefff 48%,
+            #c9e6ff 100%
+        );
+
+    box-shadow:
+        0 8px 30px rgba(
+            19,
+            92,
+            155,
+            0.12
+        );
+}
+
+
+/* Decorative background */
+
+.hero-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -80px;
+    bottom: -150px;
+
+    width: 560px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    transform: rotate(-8deg);
+
+}
+
+
+/* Decorative circles */
+
+.hero-background-circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+.circle-one {
+
+    width: 260px;
+    height: 260px;
+
+    right: 180px;
+    top: -180px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.42
+        );
+
+}
+
+
+.circle-two {
+
+    width: 180px;
+    height: 180px;
+
+    right: 40px;
+    bottom: -130px;
+
+    background:
+        rgba(
+            18,
+            102,
+            241,
+            0.08
+        );
+
+}
+
+
+/* Hero content */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+}
+
+
+.hero-left {
+
+    max-width: 850px;
+
+}
+
+
+.hero-eyebrow {
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.4px;
+
+    color: #1266f1;
+
+}
+
+
+.hero-section h1 {
+
+    margin: 0;
+
+    font-size: 37px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    color: #092e52;
+
+}
+
+
+.hero-description {
+
+    margin: 11px 0 22px;
+
+    max-width: 720px;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    color: #42617d;
+
+}
+
+
+/* Hero details */
+
+.hero-details {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
+}
+
+
+.hero-detail {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.hero-detail-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 11px;
+
+    background: #1266f1;
+
+}
+
+
+.hero-detail-icon lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #ffffff;
+
+}
+
+
+.hero-detail-label {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 11px;
+
+    color: #6c8297;
+
+}
+
+
+.hero-detail strong {
+
+    display: block;
+
+    font-size: 13px;
+
+    color: #123b5e;
+
+}
+
+
+.hero-divider {
+
+    width: 1px;
+
+    height: 44px;
+
+    background: #b8cfe3;
+
+}
+
+
+/* Status */
+
+.hero-right {
+
+    position: relative;
+
+    z-index: 5;
+
+    min-width: 180px;
+
+    text-align: right;
+
+}
+
+
+.dealer-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    border: 1px solid #b9e4cd;
+
+    background: #effaf4;
+
+    color: #177344;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.status-dot {
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #20a45a;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            32,
+            164,
+            90,
+            0.13
+        );
+
+}
+
+
+.hero-right p {
+
+    margin: 9px 2px 0;
+
+    font-size: 10px;
+
+    color: #698198;
+
+}
+
+
+/* =========================================================
+   MODULE GRID
+   ========================================================= */
+
+.module-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 24px;
+
+}
+
+
+.module-card {
+
+    position: relative;
+
+    min-height: 220px;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 28px
+        rgba(
+            20,
+            55,
+            90,
+            0.13
+        );
+
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
+
+}
+
+
+.module-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 16px 35px
+        rgba(
+            20,
+            55,
+            90,
+            0.18
+        );
+
+}
+
+
+/* Color themes */
+
+.orders-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #1687ff,
+            #075fe2
+        );
+
+}
+
+
+.products-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #17c987,
+            #079b68
+        );
+
+}
+
+
+.cases-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff941f,
+            #f2650a
+        );
+
+}
+
+
+/* Module header */
+
+.module-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.module-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        );
+
+}
+
+
+.module-icon lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #1266f1;
+
+}
+
+
+.products-card .module-icon lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #079b68;
+
+}
+
+
+.cases-card .module-icon lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #f2650a;
+
+}
+
+
+.module-label {
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.82;
+
+}
+
+
+.module-body {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 22px;
+
+}
+
+
+.module-body h2 {
+
+    margin: 0 0 7px;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+}
+
+
+.module-body p {
+
+    margin: 0;
+
+    max-width: 290px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    opacity: 0.9;
+
+}
+
+
+.module-button {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 22px;
+
+    padding: 10px 17px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #0964df;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.module-button:hover {
+
+    transform: translateX(3px);
+
+    box-shadow:
+        0 5px 15px
+        rgba(
+            0,
+            0,
+            0,
+            0.14
+        );
+
+}
+
+
+/* =========================================================
+   DECORATIONS
+   ========================================================= */
+
+.module-decoration {
+
+    position: absolute;
+
+    right: 25px;
+
+    bottom: 22px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 5px;
+
+    opacity: 0.18;
+
+}
+
+
+.module-decoration span {
+
+    display: block;
+
+    width: 13px;
+
+    border-radius: 4px 4px 0 0;
+
+    background: #ffffff;
+
+}
+
+
+.module-decoration span:nth-child(1) {
+
+    height: 35px;
+
+}
+
+
+.module-decoration span:nth-child(2) {
+
+    height: 52px;
+
+}
+
+
+.module-decoration span:nth-child(3) {
+
+    height: 70px;
+
+}
+
+
+.module-decoration span:nth-child(4) {
+
+    height: 88px;
+
+}
+
+
+/* Battery */
+
+.battery-decoration {
+
+    position: absolute;
+
+    right: 60px;
+
+    bottom: 28px;
+
+    opacity: 0.22;
+
+}
+
+
+.battery-body {
+
+    width: 58px;
+
+    height: 76px;
+
+    border: 5px solid #ffffff;
+
+    border-radius: 9px;
+
+    position: relative;
+
+}
+
+
+.battery-terminal {
+
+    width: 22px;
+
+    height: 7px;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    border-radius: 4px 4px 0 0;
+
+}
+
+
+.battery-level {
+
+    position: absolute;
+
+    left: 9px;
+    right: 9px;
+    bottom: 9px;
+
+    height: 30px;
+
+    border-radius: 4px;
+
+    background: #ffffff;
+
+}
+
+
+/* Support */
+
+.support-decoration {
+
+    position: absolute;
+
+    right: 55px;
+
+    bottom: 30px;
+
+    width: 90px;
+
+    height: 80px;
+
+    opacity: 0.19;
+
+}
+
+
+.headphone-band {
+
+    position: absolute;
+
+    left: 12px;
+    top: 4px;
+
+    width: 66px;
+    height: 66px;
+
+    border: 8px solid #ffffff;
+
+    border-bottom: 0;
+
+    border-radius: 50px 50px 0 0;
+
+}
+
+
+.headphone-left,
+.headphone-right {
+
+    position: absolute;
+
+    bottom: 3px;
+
+    width: 18px;
+    height: 34px;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+}
+
+
+.headphone-left {
+
+    left: 6px;
+
+}
+
+
+.headphone-right {
+
+    right: 6px;
+
+}
+
+
+/* =========================================================
+   LOWER GRID
+   ========================================================= */
+
+.lower-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.08fr
+        0.92fr;
+
+    gap: 20px;
+
+}
+
+
+/* =========================================================
+   DASHBOARD CARDS
+   ========================================================= */
+
+.dashboard-card {
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #d8e5f0;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 7px 24px
+        rgba(
+            20,
+            55,
+            90,
+            0.07
+        );
+
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.card-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 21px 24px;
+
+    border-bottom: 1px solid #e4edf4;
+
+}
+
+
+.heading-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+}
+
+
+.blue-icon {
+
+    background: #e9f3ff;
+
+}
+
+
+.blue-icon lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #1266f1;
+
+}
+
+
+.purple-icon {
+
+    background: #eeeaff;
+
+}
+
+
+.purple-icon lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #633cff;
+
+}
+
+
+.section-label {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #1266f1;
+
+}
+
+
+.card-heading h2 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: #123454;
+
+}
+
+
+.card-heading p {
+
+    margin: 3px 0 0;
+
+    font-size: 11px;
+
+    color: #7890a5;
+
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.profile-content {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    min-height: 230px;
+
+}
+
+
+.profile-column {
+
+    padding: 12px 24px;
+
+}
+
+
+.profile-right {
+
+    border-left: 1px solid #e4edf4;
+
+}
+
+
+.profile-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #edf2f6;
+
+}
+
+
+.profile-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.row-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    border-radius: 8px;
+
+    background: #edf5ff;
+
+}
+
+
+.row-icon lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #1266f1;
+
+}
+
+
+.profile-row span {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+
+    color: #8094a8;
+
+}
+
+
+.profile-row strong {
+
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #173c5c;
+
+    word-break: break-word;
+
+}
+
+
+/* Location */
+
+.location-block {
+
+    display: flex;
+
+    gap: 13px;
+
+    padding: 16px 0 20px;
+
+}
+
+
+.location-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #eaf4ff;
+
+}
+
+
+.location-icon lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #1266f1;
+
+}
+
+
+.location-label {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    color: #758ba0;
+
+}
+
+
+.location-block strong {
+
+    display: block;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    color: #173c5c;
+
+}
+
+
+/* Active */
+
+.account-active {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ecfbf3,
+            #e1f7eb
+        );
+
+    border: 1px solid #c7ead6;
+
+}
+
+
+.active-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 9px;
+
+    background: #20a45a;
+
+}
+
+
+.active-icon lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #ffffff;
+
+}
+
+
+.account-active strong {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 12px;
+
+    color: #177344;
+
+}
+
+
+.account-active span {
+
+    display: block;
+
+    font-size: 10px;
+
+    color: #548069;
+
+}
+
+
+/* Profile footer */
+
+.profile-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 13px 24px;
+
+    border-top: 1px solid #e4edf4;
+
+    background: #fbfdff;
+
+    font-size: 10px;
+
+    color: #7b90a3;
+
+}
+
+
+.text-button {
+
+    border: none;
+
+    background: transparent;
+
+    color: #1266f1;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.actions-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    padding: 14px 16px 10px;
+
+}
+
+
+.action-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-height: 66px;
+
+    padding: 10px;
+
+    border: 1px solid transparent;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.action-box:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px
+        rgba(
+            20,
+            55,
+            90,
+            0.08
+        );
+
+}
+
+
+.action-blue {
+
+    background: #edf6ff;
+    border-color: #d6eaff;
+
+}
+
+
+.action-green {
+
+    background: #eafaf3;
+    border-color: #d2f0e2;
+
+}
+
+
+.action-orange {
+
+    background: #fff2e8;
+    border-color: #ffe1cc;
+
+}
+
+
+.action-purple {
+
+    background: #f0edff;
+    border-color: #ded7ff;
+
+}
+
+
+.action-box-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+}
+
+
+.action-blue .action-box-icon {
+
+    background: #d9ecff;
+
+}
+
+
+.action-green .action-box-icon {
+
+    background: #d6f4e5;
+
+}
+
+
+.action-orange .action-box-icon {
+
+    background: #ffe1cc;
+
+}
+
+
+.action-purple .action-box-icon {
+
+    background: #ddd6ff;
+
+}
+
+
+.action-blue lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #1266f1;
+
+}
+
+
+.action-green lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #079b68;
+
+}
+
+
+.action-orange lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #f2650a;
+
+}
+
+
+.action-purple lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #633cff;
+
+}
+
+
+.action-content {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.action-content strong {
+
+    display: block;
+
+    font-size: 11px;
+
+    color: #173c5c;
+
+}
+
+
+.action-content span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    color: #71869a;
+
+}
+
+
+.action-arrow {
+
+    font-size: 18px;
+
+    color: #1266f1;
+
+}
+
+
+/* Help */
+
+.help-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0 16px 16px;
+
+    padding: 12px;
+
+    border-radius: 9px;
+
+    background: #edf6ff;
+
+    border: 1px solid #d6eaff;
+
+}
+
+
+.help-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #1266f1;
+
+}
+
+
+.help-icon lightning-icon {
+
+    --slds-c-icon-color-foreground-default:
+        #ffffff;
+
+}
+
+
+.help-content {
+
+    flex: 1;
+
+}
+
+
+.help-content strong {
+
+    display: block;
+
+    font-size: 11px;
+
+    color: #173c5c;
+
+}
+
+
+.help-content span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    color: #6d8296;
+
+}
+
+
+.help-button {
+
+    padding: 8px 12px;
+
+    border: 1px solid #1266f1;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #1266f1;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.portal-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 25px;
+
+    padding: 18px 25px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #062b4d,
+            #0b416e
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            6,
+            43,
+            77,
+            0.15
+        );
+
+}
+
+
+.footer-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 10px;
+
+}
+
+
+.footer-brand strong {
+
+    font-size: 11px;
+
+    letter-spacing: 1.3px;
+
+}
+
+
+.footer-brand span {
+
+    color: #b7cadb;
+
+}
+
+
+.footer-separator {
+
+    color: #6f91ad !important;
+
+}
+
+
+.footer-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+
+    border-radius: 50%;
+
+    background: #1266f1;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 9px;
+
+    color: #c2d1df;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .dealer-dashboard {
+
+        padding-left: 22px;
+        padding-right: 22px;
+
+    }
+
+    .hero-section {
+
+        padding-left: 35px;
+        padding-right: 35px;
+
+    }
+
+    .lower-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .module-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .hero-content {
+
+        flex-direction: column;
+
+    }
+
+    .hero-right {
+
+        text-align: left;
+
+    }
+
+    .profile-content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .profile-right {
+
+        border-left: none;
+
+        border-top: 1px solid #e4edf4;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dealer-dashboard {
+
+        padding:
+            20px
+            14px
+            30px;
+
+    }
+
+    .hero-section {
+
+        padding: 28px 22px;
+
+        min-height: auto;
+
+    }
+
+    .hero-section h1 {
+
+        font-size: 28px;
+
+    }
+
+    .hero-details {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 14px;
+
+    }
+
+    .hero-divider {
+
+        display: none;
+
+    }
+
+    .actions-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .portal-footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+    }
+
+    .footer-links {
+
+        flex-wrap: wrap;
+
+    }
+
+}

@@ -1,0 +1,443 @@
+.case-detail-page {
+    width: 100%;
+    padding: 10px 0 40px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.detail-header {
+    margin-bottom: 24px;
+}
+
+
+.back-button {
+    border: none;
+    background: transparent;
+
+    padding: 0;
+    margin-bottom: 18px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #f2650a;
+
+    cursor: pointer;
+}
+
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.section-label {
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #f2650a;
+}
+
+
+.header-content h1 {
+    margin: 0;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+
+.header-content p {
+    margin: 0;
+
+    font-size: 15px;
+
+    color: #667085;
+}
+
+
+/* =========================================================
+   MAIN DETAIL CARD
+   ========================================================= */
+
+.detail-card {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   CASE HEADER
+   ========================================================= */
+
+.case-header {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 26px;
+
+    border-bottom: 1px solid #edf0f2;
+}
+
+
+.case-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #fff3e8;
+}
+
+
+.case-icon lightning-icon {
+    --slds-c-icon-color-foreground-default: #f2650a;
+}
+
+
+.case-title {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.case-title > span {
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #f2650a;
+}
+
+
+.case-title h2 {
+    margin: 4px 0 0;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 13px;
+
+    border-radius: 999px;
+
+    background: #f3f4f6;
+
+    color: #4b5563;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.status-open {
+    background: #e8f5e9;
+
+    color: #2e7d32;
+}
+
+
+.status-progress {
+    background: #fff7df;
+
+    color: #9a6700;
+}
+
+
+.status-closed {
+    background: #eeeeee;
+
+    color: #616161;
+}
+
+
+/* =========================================================
+   CASE INFORMATION
+   ========================================================= */
+
+.information-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 0;
+
+    border-bottom: 1px solid #edf0f2;
+}
+
+
+.info-item {
+    padding: 20px 24px;
+
+    border-right: 1px solid #edf0f2;
+
+    border-bottom: 1px solid #edf0f2;
+}
+
+
+.info-item:nth-child(3n) {
+    border-right: none;
+}
+
+
+.info-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.6px;
+
+    text-transform: uppercase;
+
+    color: #8a94a6;
+}
+
+
+.info-item strong {
+    font-size: 14px;
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.description-section {
+    padding: 24px;
+
+    border-bottom: 1px solid #edf0f2;
+}
+
+
+.description {
+    margin-top: 10px;
+
+    padding: 16px;
+
+    background: #f8fafc;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #475467;
+
+    white-space: pre-wrap;
+}
+
+
+/* =========================================================
+   DEALER INFORMATION
+   ========================================================= */
+
+.dealer-section {
+    padding: 24px;
+
+    border-bottom: 1px solid #edf0f2;
+}
+
+
+.section-heading {
+    margin-bottom: 18px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #172033;
+}
+
+
+.dealer-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+
+.dealer-grid strong {
+    font-size: 14px;
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.detail-footer {
+    display: flex;
+
+    justify-content: flex-start;
+
+    padding: 20px 24px;
+
+    background: #fafbfc;
+}
+
+
+.back-action {
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #f2650a;
+
+    cursor: pointer;
+}
+
+
+.back-action:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   LOADING / ERROR
+   ========================================================= */
+
+.state-card {
+    min-height: 220px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+}
+
+
+.state-card h2 {
+    margin: 16px 0 0;
+
+    font-size: 20px;
+
+    color: #172033;
+}
+
+
+.state-card p {
+    margin: 10px 0 0;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .header-content h1 {
+        font-size: 25px;
+    }
+
+
+    .case-header {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    .case-title {
+        width: calc(100% - 70px);
+    }
+
+
+    .status-badge {
+        margin-left: 68px;
+    }
+
+
+    .information-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .info-item {
+        border-right: none;
+    }
+
+
+    .dealer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+}

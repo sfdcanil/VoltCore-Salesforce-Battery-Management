@@ -1,0 +1,180 @@
+<template>
+
+    <!-- Loading -->
+    <template if:true={isLoading}>
+
+        <div class="state-card loading-state">
+
+            <lightning-spinner
+                alternative-text="Loading cases"
+                size="medium">
+            </lightning-spinner>
+
+            <p>Loading your cases...</p>
+
+        </div>
+
+    </template>
+
+
+    <!-- Error -->
+    <template if:true={errorMessage}>
+
+        <div class="state-card error-state">
+
+            <lightning-icon
+                icon-name="utility:error"
+                alternative-text="Error"
+                size="medium">
+            </lightning-icon>
+
+            <h2>
+                Unable to load cases
+            </h2>
+
+            <p>
+                {errorMessage}
+            </p>
+
+        </div>
+
+    </template>
+
+
+    <!-- Cases -->
+    <template if:true={hasCases}>
+
+        <div class="cases-list">
+
+            <template
+                for:each={cases}
+                for:item="caseRecord">
+
+                <article
+                    key={caseRecord.id}
+                    class="case-card"
+                    data-id={caseRecord.id}
+                    onclick={handleCaseClick}>
+
+                    <div class="case-main">
+
+                        <div class="case-icon">
+
+                            <lightning-icon
+                                icon-name="utility:case"
+                                alternative-text="Case"
+                                size="small">
+                            </lightning-icon>
+
+                        </div>
+
+
+                        <div class="case-details">
+
+                            <div class="case-number">
+                                Case #{caseRecord.caseNumber}
+                            </div>
+
+                            <h2>
+                                {caseRecord.subject}
+                            </h2>
+
+                            <div class="case-meta">
+
+                                <template if:true={caseRecord.type}>
+
+                                    <span>
+                                        Type: {caseRecord.type}
+                                    </span>
+
+                                </template>
+
+
+                                <template if:true={caseRecord.origin}>
+
+                                    <span>
+                                        Origin: {caseRecord.origin}
+                                    </span>
+
+                                </template>
+
+
+                                <span>
+                                    Created:
+                                    <lightning-formatted-date-time
+                                        value={caseRecord.createdDate}
+                                        year="numeric"
+                                        month="short"
+                                        day="2-digit">
+                                    </lightning-formatted-date-time>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="case-status-section">
+
+                        <span class={caseRecord.statusClass}>
+                            {caseRecord.status}
+                        </span>
+
+
+                        <template if:true={caseRecord.priority}>
+
+                            <span class="priority">
+                                {caseRecord.priority}
+                            </span>
+
+                        </template>
+
+
+                        <span class="view-arrow">
+                            GÂ∆
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </template>
+
+        </div>
+
+    </template>
+
+
+    <!-- No Cases -->
+    <template if:true={hasNoCases}>
+
+        <div class="state-card empty-state">
+
+            <div class="empty-icon">
+
+                <lightning-icon
+                    icon-name="utility:case"
+                    alternative-text="No cases"
+                    size="medium">
+                </lightning-icon>
+
+            </div>
+
+
+            <h2>
+                No Cases Found
+            </h2>
+
+
+            <p>
+                You currently don't have any support cases
+                or service requests.
+            </p>
+
+        </div>
+
+    </template>
+
+</template>

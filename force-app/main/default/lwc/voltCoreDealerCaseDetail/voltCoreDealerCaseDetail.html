@@ -1,0 +1,367 @@
+<template>
+
+    <section class="case-detail-page">
+
+        <!-- =====================================================
+             HEADER
+             ===================================================== -->
+
+        <div class="detail-header">
+
+            <button
+                type="button"
+                class="back-button"
+                onclick={handleBack}>
+
+                GÂ… Back to Cases
+
+            </button>
+
+
+            <div class="header-content">
+
+                <span class="section-label">
+                    SUPPORT CASE
+                </span>
+
+                <h1>
+                    Case #{caseRecord.caseNumber}
+                </h1>
+
+                <p>
+                    View your support case details.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             LOADING
+             ===================================================== -->
+
+        <template if:true={isLoading}>
+
+            <div class="state-card loading-state">
+
+                <lightning-spinner
+                    alternative-text="Loading case"
+                    size="medium">
+                </lightning-spinner>
+
+                <p>
+                    Loading case details...
+                </p>
+
+            </div>
+
+        </template>
+
+
+        <!-- =====================================================
+             ERROR
+             ===================================================== -->
+
+        <template if:true={errorMessage}>
+
+            <div class="state-card error-state">
+
+                <lightning-icon
+                    icon-name="utility:error"
+                    alternative-text="Error"
+                    size="medium">
+                </lightning-icon>
+
+                <h2>
+                    Unable to load case
+                </h2>
+
+                <p>
+                    {errorMessage}
+                </p>
+
+                <button
+                    type="button"
+                    class="back-action"
+                    onclick={handleBack}>
+
+                    GÂ… Back to Cases
+
+                </button>
+
+            </div>
+
+        </template>
+
+
+        <!-- =====================================================
+             CASE DETAILS
+             ===================================================== -->
+
+        <template if:true={hasCase}>
+
+            <div class="detail-card">
+
+
+                <!-- CASE HEADER -->
+
+                <div class="case-header">
+
+                    <div class="case-icon">
+
+                        <lightning-icon
+                            icon-name="utility:case"
+                            alternative-text="Case"
+                            size="medium">
+                        </lightning-icon>
+
+                    </div>
+
+
+                    <div class="case-title">
+
+                        <span>
+                            Case #{caseRecord.caseNumber}
+                        </span>
+
+                        <h2>
+                            {caseRecord.subject}
+                        </h2>
+
+                    </div>
+
+
+                    <span class={statusClass}>
+                        {caseRecord.status}
+                    </span>
+
+                </div>
+
+
+                <!-- =================================================
+                     CASE INFORMATION
+                     ================================================= -->
+
+                <div class="information-grid">
+
+
+                    <!-- STATUS -->
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Status
+                        </span>
+
+                        <strong>
+                            {caseRecord.status}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- PRIORITY -->
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Priority
+                        </span>
+
+                        <strong>
+                            {caseRecord.priority}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- TYPE -->
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Type
+                        </span>
+
+                        <strong>
+                            {caseRecord.type}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- ORIGIN -->
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Origin
+                        </span>
+
+                        <strong>
+                            {caseRecord.origin}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- CREATED DATE -->
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Created
+                        </span>
+
+                        <strong>
+
+                            <lightning-formatted-date-time
+                                value={caseRecord.createdDate}
+                                year="numeric"
+                                month="short"
+                                day="2-digit"
+                                hour="2-digit"
+                                minute="2-digit">
+                            </lightning-formatted-date-time>
+
+                        </strong>
+
+                    </div>
+
+
+                    <!-- LAST MODIFIED -->
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Last Updated
+                        </span>
+
+                        <strong>
+
+                            <lightning-formatted-date-time
+                                value={caseRecord.lastModifiedDate}
+                                year="numeric"
+                                month="short"
+                                day="2-digit"
+                                hour="2-digit"
+                                minute="2-digit">
+                            </lightning-formatted-date-time>
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     DESCRIPTION
+                     ================================================= -->
+
+                <template if:true={caseRecord.description}>
+
+                    <div class="description-section">
+
+                        <span class="info-label">
+                            Description
+                        </span>
+
+                        <div class="description">
+                            {caseRecord.description}
+                        </div>
+
+                    </div>
+
+                </template>
+
+
+                <!-- =================================================
+                     DEALER INFORMATION
+                     ================================================= -->
+
+                <div class="dealer-section">
+
+                    <div class="section-heading">
+                        Dealer Information
+                    </div>
+
+
+                    <div class="dealer-grid">
+
+
+                        <!-- ACCOUNT -->
+
+                        <div>
+
+                            <span class="info-label">
+                                Account
+                            </span>
+
+                            <strong>
+                                {caseRecord.accountName}
+                            </strong>
+
+                        </div>
+
+
+                        <!-- CONTACT -->
+
+                        <div>
+
+                            <span class="info-label">
+                                Contact
+                            </span>
+
+                            <strong>
+                                {caseRecord.contactName}
+                            </strong>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div>
+
+                            <span class="info-label">
+                                Email
+                            </span>
+
+                            <strong>
+                                {caseRecord.contactEmail}
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     FOOTER
+                     ================================================= -->
+
+                <div class="detail-footer">
+
+                    <button
+                        type="button"
+                        class="back-action"
+                        onclick={handleBack}>
+
+                        GÂ… Back to Cases
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </template>
+
+    </section>
+
+</template>
