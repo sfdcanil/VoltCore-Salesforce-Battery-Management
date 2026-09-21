@@ -4,17 +4,17 @@ private class VoltCoreLeadConversionActionTest {
     @IsTest
     static void testLeadConversion() {
 
-        // Create test Lead
         Lead testLead = new Lead(
             FirstName = 'VoltCore',
             LastName = 'TestDealer',
             Company = 'VoltCore Test Company',
-            Status = 'New'
+            Status = 'New',
+            GSTIN__c = '37ABCDF1234E1Z5',
+            PAN_Number__c = 'ABCDE1234F'
         );
 
         insert testLead;
 
-        // Prepare Invocable request
         VoltCoreLeadConversionAction.Request request =
             new VoltCoreLeadConversionAction.Request();
 
@@ -31,32 +31,19 @@ private class VoltCoreLeadConversionActionTest {
 
         Test.stopTest();
 
-        // Verify Lead was converted
         Lead convertedLead = [
-            SELECT Id, IsConverted, ConvertedAccountId, ConvertedContactId
+            SELECT Id,
+                   IsConverted,
+                   ConvertedAccountId,
+                   ConvertedContactId
             FROM Lead
             WHERE Id = :testLead.Id
         ];
 
-        System.assertEquals(
-            true,
-            convertedLead.IsConverted,
-            'Lead should be converted.'
-        );
+        System.assertEquals(true, convertedLead.IsConverted);
+        System.assertNotEquals(null, convertedLead.ConvertedAccountId);
+        System.assertNotEquals(null, convertedLead.ConvertedContactId);
 
-        System.assertNotEquals(
-            null,
-            convertedLead.ConvertedAccountId,
-            'An Account should be created.'
-        );
-
-        System.assertNotEquals(
-            null,
-            convertedLead.ConvertedContactId,
-            'A Contact should be created.'
-        );
-
-        // Verify Account exists
         Account convertedAccount = [
             SELECT Id, Name
             FROM Account
@@ -65,11 +52,9 @@ private class VoltCoreLeadConversionActionTest {
 
         System.assertEquals(
             'VoltCore Test Company',
-            convertedAccount.Name,
-            'Account should be created from the Lead Company.'
+            convertedAccount.Name
         );
 
-        // Verify Contact exists
         Contact convertedContact = [
             SELECT Id, FirstName, LastName
             FROM Contact
@@ -78,27 +63,20 @@ private class VoltCoreLeadConversionActionTest {
 
         System.assertEquals(
             'VoltCore',
-            convertedContact.FirstName,
-            'Contact first name should come from the Lead.'
+            convertedContact.FirstName
         );
 
         System.assertEquals(
             'TestDealer',
-            convertedContact.LastName,
-            'Contact last name should come from the Lead.'
+            convertedContact.LastName
         );
 
-        // Verify no Opportunity was created
         List<Opportunity> opportunities = [
             SELECT Id
             FROM Opportunity
             WHERE AccountId = :convertedLead.ConvertedAccountId
         ];
 
-        System.assertEquals(
-            0,
-            opportunities.size(),
-            'VoltCore Lead conversion should not create an Opportunity.'
-        );
+        System.assertEquals(0, opportunities.size());
     }
 }
